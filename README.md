@@ -21,3 +21,9 @@
  1. 2 types of dependencies -- dev and normal one
  2. 2 sings before packages => ^(kerat) for minor upgrade and ~(telda) for major upgrade
  3. package.lock.json has exact version, neither ^ nor ~
+
+ // ignite app using parcel(which installed already)
+ 1. command : npx parcel index.html 
+ 2. Benefit of Parcel : a. Dev Build b.Local serve c. HMR(Hot module replacement) 
+ 3. HMR capablity comes through File Watching Algorithm written C++
+ 4. Caching - faset build -- creates parcel-cache
