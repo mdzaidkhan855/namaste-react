@@ -40,3 +40,29 @@
 
  // Browser List
  1. apply "browserslist":["last 2 version"] in package.json for last 2 version of all browser support
+
+ ############################  Episode:3 Laying The foudation #############################
+ // Build script(in package.json) instead of using <npx parcel index.html> or <npx parcel build index.html>
+ 1. for dev: "start":"parcel index.html"
+ 2. for prod : "build":"parcel build index.html"
+ 3. Ignite the app in dev : <npm run start>  or <npm run build> (for prod)
+ 4. Or shorcut is : <npm start> 
+ 5. But for prod NO shortcut : only command is <npm run build>
+
+ // JSX : jsx 
+ 1. JSX is NOT html in javascript. It's html/xml like syntax. more close to xml
+ 2. JSX is transpiled into javascript by parcel before it reaches to JS engine.
+ 3. And Parcel doing transpilation using Babel(javascript compiler or transpiler)
+ 4. JSX => React.createElement => React Element JS Object => HTMLElement(render)
+
+ // VS code extension
+ 1. Pretty formatter 2. Bracket Pair Colorization Toggler
+
+ // React Component
+ 1. Everything in React is component
+ 2. 2 types of component : Funcation(new way) and Class(old way) based components
+ 3. React functional component is just a normal Javascript function which returns some JSX.
+ 4. React function name MUST BE IN CAPITAL, OTHERWISE IT THROWS ERRORs
+
+ ############################  Episode:4 Talk is cheap Show me the code #############################
+ 
