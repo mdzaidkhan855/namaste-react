@@ -65,4 +65,12 @@
  4. React function name MUST BE IN CAPITAL, OTHERWISE IT THROWS ERRORs
 
  ############################  Episode:4 Talk is cheap Show me the code #############################
- 
+ 1. props are just an argument passed to functional component, which is at the end of day is norma JS Func.
+ 2. Install Json viewer as chrome extension. JSON data in browser will look cool.
+ 3. Design principle : Config driven UI used in front end system design
+ 4. Our website driven by data, which is basically driven by config
+ 5. Swiggy food offer differs for different region is an example of config driven
+
+ // Key while using map
+ 1. Use key as props , so that react does not need to render all the item
+ 2. Never user index as key while looping using map. Create a field "id" in json and use that , instead.
