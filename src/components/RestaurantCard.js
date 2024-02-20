@@ -1,18 +1,28 @@
 const RestaurantCard = (props)=>{
     const {resData} = props;
     //console.log(resData);
-    const {action,accessibility,cuisine,star,delivery} = resData;
+   // const {action,accessibility,cuisine,star,delivery,imageId} = resData;
     //let randomstar = Math.random(5);
+    const {
+        cloudinaryImageId,
+        name,
+        avgRating,
+        cuisines,
+        costForTwo,
+        sla
+    }= resData.info; 
+    const imageRoot = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
     return (
         <div className="res-card">
             <img 
                 className="res-logo"
                 alt="res-logo" 
-                src="https://media.istockphoto.com/id/1530955921/photo/overhead-shot-of-a-vibrant-colorful-bowl-filled-with-a-variety-of-fresh-raw-vegetables.webp?s=170667a&w=0&k=20&c=k0B7fWD7dkCCIX5TGIfumkBfxL-PmGAKtsn7TpP1w98="></img>
-            <h3>{accessibility.altText}</h3>
-            <h4>{action.text}</h4>
-            <h4>{star} stars</h4>
-            <h4>{delivery} minutes</h4>
+                src={imageRoot + cloudinaryImageId}></img>
+            <h3>{name}</h3>
+            <h4>{cuisines.join(", ")}</h4>
+            <h4>{avgRating} stars</h4>
+            <h4>{costForTwo}</h4>
+            <h4>{sla.deliveryTime} minutes</h4>
         </div>
     )
 }

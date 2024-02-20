@@ -7,8 +7,11 @@ import Shimmer from "./Shimmer";
 
 const Body = ()=>{
    const [listOfRestaurant,setListOfRestaurant] = useState([]);
+   const [filteredRestaurant,setFilteredRestaurant] = useState([]);
 
    const[searchText,setSearchText] = useState("");
+
+   
     
    useEffect(()=>{
         fetchData();
@@ -18,7 +21,8 @@ const Body = ()=>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
         //console.log(json.data.cards[0].card.card.imageGridCards.info);
-        let info = json.data.cards[0].card.card.imageGridCards.info;
+        //let info = json.data.cards[0].card.card.imageGridCards.info;
+        let info = json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
        // info = {...info , star:5};
     //    info = info.map((res)=>{
     //             let randomstar = Math.random(5);
@@ -27,6 +31,7 @@ const Body = ()=>{
                
     //         })
         setListOfRestaurant(info);
+        setFilteredRestaurant(info);
     }
    //console.log("body rendered");
 //    if(list.length === 0){
@@ -41,9 +46,13 @@ const Body = ()=>{
                         onChange={(e)=>setSearchText(e.target.value)}
                     />
                     <button onClick={()=>{
-                        console.log(searchText);
-                    }}>Search</button>
+                        
+                        let filteredList = listOfRestaurant.filter((res) => 
+                                    res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                        setFilteredRestaurant(filteredList);
 
+                    }}>Search</button>
+                    
                 </div>
                 <button className="filter-btn" type="button" onClick={()=>{
                     
@@ -55,7 +64,7 @@ const Body = ()=>{
             </div>
             <div className="res-container">
                 {
-                    listOfRestaurant.map((restaurant)=><RestaurantCard key={restaurant.id} resData={restaurant}/>)
+                    filteredRestaurant.map((restaurant)=><RestaurantCard key={restaurant.info.id} resData={restaurant}/>)
                 }               
                 
             </div>
