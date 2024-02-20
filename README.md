@@ -74,3 +74,37 @@
  // Key while using map
  1. Use key as props , so that react does not need to render all the item
  2. Never user index as key while looping using map. Create a field "id" in json and use that , instead.
+
+############################  Episode:5 LET's get Hooked up #############################
+ // default/named export and import 
+ 1. Default : a. export default Component b. import Component from "Path"
+ 2. Named : a. export const Component b. import {Component} from "Path"
+
+ // WHY REACT FAST, RE-RENDERING , RECONCILIATION etc.
+ 1. Reconciliation Algoithm also known as React Fibre
+ 2. React creates Virtual DOM -- representation of actual DOM( tags like <div/><h1/> etc.)
+ 3. Virtual DOM is basically react elements( react object)
+ 4.  Diff algorithm finds the difference between New Virtual DOM and Updated Virtual DOM.
+ 5. Finding diff between 2 objcets is easier than finding between 2 DOM.
+ 6. Once React finds difference between 2 objects(that is Virtaul DOM), then it actually updates real DOM.
+ 7. This eficient DOM manipulation is because of Incremental manipulation.
+ 8. Key Words: Reconciliation Algoithm, React Fibre , Virtual DOM(react element/javascript object), Real DOM
+ 9. AND THIS MANIPULATION HAPPENS EVEYTIME STATE CHANGES.=> STATE MANAGEMENT
+
+ ####################### Episode:6 Exploring the World : Basically API CALL mainly ########################
+ 1. There are 2 approaches to load data
+ 2. As soon as page loads, we make API call. when we get data, we render the UI
+ 3. Suppose API call takes 500 ms. So after 500 ms, we render the data
+ 4. Second approache => As soon as page loada, we render UI quickly(SKeleton).
+ 5. After UI rendering, we re-render UI after data comes as response.
+ 6. In React, we will use 2ND APPROACH. Better UX experience.
+ 7. In 1st approach, it's kind of frozen... Poor UX experience.
+ 8. Although 2 times rendering in react, it does not matter as it is very fast.
+ 9. Conclusion 2nd approach: Load => render => API => Re-render
+ 10. Conclusion 1st approach : Load => API => Render.
+ 11. useEffect is called after component renders.
+ 12. Showing loader is not good way, instead show shimmer UI.
+ 13. Shimmer UI is fake page, which resembles actual but not actual: Much better UX experience.
+ 14. Conditional rendering : while data being loaded, you can return shimmer.
+
+
