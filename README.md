@@ -107,4 +107,39 @@
  13. Shimmer UI is fake page, which resembles actual but not actual: Much better UX experience.
  14. Conditional rendering : while data being loaded, you can return shimmer.
 
+ #######################  CORS ISSUE Resolution ##############################
+ 1. Either use CORS chrome extension to bypass CORS issue.
+ 2. OR go to Cors proxy IO site... Append before API call : https://corsproxy.io/?
+ 3. It seems this cors proxy site is not providing services, so better use CORS extension
+ 4. You need to toggle ON/OFF to use the extension.
+
+ #####################  Episode 7 : PATH / ROUTING ###########################
+ 1. UseEffect hook : Everytime component is rendered, useEffect will be called.
+ 2. But dependency array ([]) as second paramater(optional) changes its behaviour.
+ 3. If no dependency array, then useEffect is called every time component renders
+ 4. If there is depency array, but empty one like [], useEffect is called on initial render and just ONCE .
+ 5. If there is dependency array, NOT EMPTY, useEffect is called whenever dependency changes.
+ 6. Never use useState inside if-else statement.
+
+ // Router configuration
+ 1. Go to App.js and import browser router and router provider
+ 2. create router configuration for various path say : appRouter
+ 3. supply to render the provider passing router config : <RouterProvider router={appRouter}/>
+ 4. use hook named {useRouteError} on error component which gives more information about Error.
+ 
+ // Shortcut to create component in VS Code
+ 1. type rafce and enter, will create skeleton component and export the default. 
+
+ // Children route
+1. We need to keep header and footer intact, when move to children route.
+2. Use children attribute in route config as well as outlet(recat dom component) tag in parent component.
+
+
+
+
+
+
+
+
+
 
