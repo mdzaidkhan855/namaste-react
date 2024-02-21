@@ -133,6 +133,24 @@
  // Children route
 1. We need to keep header and footer intact, when move to children route.
 2. Use children attribute in route config as well as outlet(recat dom component) tag in parent component.
+3. Never use anchor tag to route to another page: Because whole page get refreshed.
+4. You can navigate to another page without reloading in react : This makes app faster
+5. Use Link component in react for navigation : It does not refresh the whole page
+6. that is why REACT IS SINGLE PAGE APPLICATION.
+7. Internallly Link is converted into ancher tag as HTML understands it
+
+// Types in Routing Web Application
+1. Client side routing , Server side routing.
+2. Server side makes netweork call and new page is coming.
+3. Client side: All the components are already loaded on client side.
+4. So Single Page is achieved through Client Side Routing: Pages in React is basically components.
+
+// Dynamic Routing : Different pages for different restaurant
+1. use useParams for dynamic path.
+
+
+######################### Class Component and Life cycle #######################
+1. Refer site : https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 
 
