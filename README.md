@@ -173,6 +173,12 @@
 2. Bundling based on features
 3. Lazy loading for bundles on demand loading
 
+###################### Jo Dikhta hai Woh Bikta hai #########################
+1. In React, we use styled component
+2. There are many CSS library : Material UI, Boosstrap, Chakra, ant UI etc. for pre-built component.
+3. However, we are going to use Tailwind CSS : https://tailwindcss.com/docs/installation
+4. Use VS CODE extension :   TAILWIND CSS INTELLISENCE From Tailwind Lab. 
+
 
 
 

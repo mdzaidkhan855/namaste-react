@@ -37,8 +37,8 @@ const Body = ()=>{
         <div className="body">
             
             <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText} 
+                <div className="search m-4 p-4">
+                    <input type="text" className="border border-solid" value={searchText} 
                         onChange={(e)=>setSearchText(e.target.value)}
                     />
                     <button onClick={()=>{
