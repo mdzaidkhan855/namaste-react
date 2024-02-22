@@ -151,6 +151,27 @@
 
 ######################### Class Component and Life cycle #######################
 1. Refer site : https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+2. We can use github user API : https://docs.github.com/en/rest/users?apiVersion=2022-11-28
+3. Click user on this site : https://api.github.com/user
+4. In Class based component, you can make componentDidMount() as async, and make API call
+    the way we do in functional based component.
+
+
+######################  Optimimizing APP ###############################
+
+// Custom Hooks
+1. Each single component should be modular(Single Respon priniciple) and testable.
+2. There is no har and fast rule but it should be light.
+3. To achieve even more, let's use Custom Hooks
+4. useRestraurantMenu custom hooks to fetch the data.
+
+// Online/Offline feature using Custom hook
+1. for better UX experience.
+
+// Code split, Lazy Loading, Dynamic import
+1. Chunking or split or multiple smaller bundles or dynamic bundling for better experience.
+2. Bundling based on features
+3. Lazy loading for bundles on demand loading
 
 
 
