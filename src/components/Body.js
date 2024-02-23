@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withPromotedLeb} from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import resList from "../utils/mockData";
@@ -13,7 +13,7 @@ const Body = ()=>{
 
    const[searchText,setSearchText] = useState("");
 
-   
+   const RestaurantCardWithPromoted = withPromotedLeb(RestaurantCard);
 
    useEffect(()=>{
         console.log("Body USe Effect being called");
@@ -25,7 +25,7 @@ const Body = ()=>{
         const json = await data.json();
         
         let info = json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
-       //  console.log(info);
+         console.log(info);
         setListOfRestaurant(info);
         setFilteredRestaurant(info);
     }
@@ -36,12 +36,14 @@ const Body = ()=>{
     return listOfRestaurant.length === 0 ? <Shimmer/> : (
         <div className="body">
             
-            <div className="filter">
+            <div className="filter flex">
                 <div className="search m-4 p-4">
-                    <input type="text" className="border border-solid" value={searchText} 
+                    <input type="text" className="border[4px] border-solid border-b" value={searchText} 
                         onChange={(e)=>setSearchText(e.target.value)}
                     />
-                    <button onClick={()=>{
+                    <button 
+                        className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+                      onClick={()=>{
                         
                         let filteredList = listOfRestaurant.filter((res) => {
                                     //console.log(res);
@@ -52,18 +54,36 @@ const Body = ()=>{
                     }}>Search</button>
                     
                 </div>
-                <button className="filter-btn" type="button" onClick={()=>{
-                    //console.log("Rating: " + res.info.name);
-                    let filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4);
-                    
-                    //setListOfRestaurant(filteredList);
-                    setFilteredRestaurant(filteredList);
-                    
-                }}>Top rated restaurant</button>
+                <div className="m-4 p-4 flex items-center">
+                    <button className="px-4 py-2 bg-gray-100 rounded-lg" type="button" onClick={()=>{
+                        //console.log("Rating: " + res.info.name);
+                        let filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4);
+                        
+                        //setListOfRestaurant(filteredList);
+                        setFilteredRestaurant(filteredList);
+                        
+                    }}>Top rated restaurant</button>
+                </div>
+                
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap justify-center">
                 {
-                    filteredRestaurant.map((restaurant)=><Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}><RestaurantCard  resData={restaurant}/></Link>)
+                    filteredRestaurant.map((restaurant)=>
+                        (                        
+                            <Link 
+                                key={restaurant.info.id} 
+                                to={"/restaurants/" + restaurant.info.id}
+                            >   
+                                {                                    
+                                    restaurant.info.avgRating > 4? 
+                                        (<RestaurantCardWithPromoted resData={restaurant}/>
+                                        ):
+                                        (<RestaurantCard  resData={restaurant}/>
+                                        )
+                                }                                
+                            </Link>
+                        )
+                    )
                 }               
                 
             </div>

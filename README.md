@@ -180,6 +180,17 @@
 4. Use VS CODE extension :   TAILWIND CSS INTELLISENCE From Tailwind Lab. 
 
 
+################## Data is the new Oil ###############################
+1. Higher Order component: the function that takes a component, enhances it and return back.
+2. Controlled and uncontrolled component
+3. Lifting the state up from Child(RestaurantCategory) to its parent(RetaurantMenu)
+4. Now RestaurantMenu controls RestaurantCategory, so RestaurantCategory is controlled component.
+5. Prop Driiling 
+
+############################### React Dev toolchrome for debugging #################
+1. Chrome extension for react debugging is react dev tool
+
+
 
 
 
