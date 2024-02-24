@@ -185,7 +185,10 @@
 2. Controlled and uncontrolled component
 3. Lifting the state up from Child(RestaurantCategory) to its parent(RetaurantMenu)
 4. Now RestaurantMenu controls RestaurantCategory, so RestaurantCategory is controlled component.
-5. Prop Driiling 
+5. Props Driiling : passing data from top to deep level.
+6. Passing data one to two level is fine as props. For large application, it's achieved
+   through react context.
+7. application context is kind of global variable, like logged in user, theme   
 
 ############################### React Dev toolchrome for debugging #################
 1. Chrome extension for react debugging is react dev tool
