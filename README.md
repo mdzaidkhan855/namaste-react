@@ -194,6 +194,19 @@
 1. Chrome extension for react debugging is react dev tool
 
 
+##########################  Data Store ####################################
+1. Redux is NOT manadatory, can be achieved by using context.
+2. redux is NOT part of React, it's separate library.
+3. Redux is NOT the only library. There is a library called Zustand
+4. React-Redux is library which binds react with React/
+5. Redux tool kit is newer way of writing redux .
+6. So we will be using Redux toolkit and React-resux.
+7. Redux toolkit is standard way of writing redux.
+8. Writing data : Click say Add button, dispatch an action which calls reducer function which modifies slice of redux store.
+9. Reading data : Selector is used to read the data from store and it modiies the react component.
+10. This react component is Subscribed to the store using Selector.
+
+
 
 
 

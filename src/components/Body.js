@@ -1,10 +1,11 @@
 import RestaurantCard,{withPromotedLeb} from "./RestaurantCard";
 import resList from "../utils/mockData";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 
 const Body = ()=>{
@@ -32,13 +33,15 @@ const Body = ()=>{
 
     const onlineStaus = useOnlineStatus();
     if(onlineStaus === false) return <h1>Looks like you's offline.Please check your internet</h1>
+
+    const {loggedInUser,setUserName} = useContext(UserContext);
  
     return listOfRestaurant.length === 0 ? <Shimmer/> : (
         <div className="body">
             
             <div className="filter flex">
                 <div className="search m-4 p-4">
-                    <input type="text" className="border[4px] border-solid border-b" value={searchText} 
+                    <input type="text" className="border border-solid border-black border-b-4" value={searchText} 
                         onChange={(e)=>setSearchText(e.target.value)}
                     />
                     <button 
@@ -63,6 +66,12 @@ const Body = ()=>{
                         setFilteredRestaurant(filteredList);
                         
                     }}>Top rated restaurant</button>
+                </div> 
+                <div className="m-4 p-4 flex items-center ">
+                    <label className="m-2">User Name: </label>
+                    <input className="border border-solid border-black border-b-4"
+                    value={loggedInUser}
+                     type="text" onChange={(e)=>setUserName(e.target.value)}/>
                 </div>
                 
             </div>
