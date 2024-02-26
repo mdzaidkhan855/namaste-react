@@ -1,7 +1,16 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { addItem } from '../utils/cartSlice';
 
 const ItemList = ({items}) => {
-    console.log("ITEMS :"  +items);
+    //console.log("ITEMS :"  +items);
+
+    const dispatch = useDispatch();
+
+    const handleAddItem = (item)=>{
+      console.log("ITEMS :" , item);
+      dispatch(addItem(item))
+    }
   return (
     <div>
         
@@ -13,6 +22,9 @@ const ItemList = ({items}) => {
                                 <span> - ₹ {item.card.info.price}</span>
                             </div>
                             <p className='text-xs'>{item.card.info.description}</p>
+                            <button type="button" onClick={()=>handleAddItem(item)}
+                            >Add+
+                            </button>
                     </div>
                 )
             })}
