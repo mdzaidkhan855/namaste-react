@@ -205,6 +205,7 @@
 8. Writing data : Click say Add button, dispatch an action which calls reducer function which modifies slice of redux store.
 9. Reading data : Selector is used to read the data from store and it modiies the react component.
 10. This react component is Subscribed to the store using Selector.
+11. Install : @reduxjs/toolkit and react-redux
 
 
 
